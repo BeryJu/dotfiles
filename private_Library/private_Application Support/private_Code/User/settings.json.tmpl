@@ -1,0 +1,285 @@
+{
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": true,
+    "editor.rulers": [
+        100,
+        120
+    ],
+    "extensions.ignoreRecommendations": false,
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true,
+    "window.title": "${activeEditorLong}${separator}${rootName}",
+    "breadcrumbs.enabled": true,
+    "gitlens.codeLens.enabled": false,
+    "workbench.editor.closeOnFileDelete": true,
+    "cSpell.userWords": [
+        "Ansible",
+        "EXIF",
+        "Haufe",
+        "Injectable",
+        "KUBERNETES",
+        "UNRENOLLMENT",
+        "datagrid",
+        "goca",
+        "imediate",
+        "opennebula",
+        "unenrollment"
+    ],
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[terraform]": {
+        "editor.tabSize": 2
+    },
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "git.autofetch": true,
+    "files.associations": {
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+        "zshrc": "shellscript",
+        "*.hcl": "terraform"
+    },
+    "files.insertFinalNewline": true,
+    "editor.renderControlCharacters": false,
+    "editor.wordWrap": "on",
+    "workbench.activityBar.visible": true,
+    // Custom tags for the parser to use
+    "yaml.customTags": [
+        "vault"
+    ],
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "terminal.external.osxExec": "iTerm2.app",
+    "cSpell.language": "de,en,en-GB,en-US",
+    "debug.toolBarLocation": "docked",
+    "workbench.list.keyboardNavigation": "filter",
+    "emmet.includeLanguages": {
+        "jinja-html": "html"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "vsicons.projectDetection.autoReload": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "text.html.markdown.journal.task.open.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.marker",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.text",
+                "settings": {}
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.marker",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.text",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.scope",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            }
+        ]
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "python.venvPath": "{{ .chezmoi.homeDir }}/.local/share/virtualenvs/",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "external": true,
+        "pathToBinary": "",
+        "args": [
+            "serve"
+        ],
+        "maxNumberOfProblems": 100,
+        "trace.server": "off"
+    },
+    "ansibleVault.keyfile": "{{ .chezmoi.homeDir }}/dev/ansible/.vault",
+    "ansibleVault.executable": "docker run --rm -v \"/Users:/Users\" registry.haufe.io/ictunix/ansible-base:2.6 ansible-vault",
+    "workbench.editor.enablePreview": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "git-commit",
+        "go",
+        "handlebars",
+        "haskell",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.formatOnSave": false
+    },
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path": "{{ .chezmoi.homeDir }}/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vs-kubernetes.minikube-path": "{{ .chezmoi.homeDir }}/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.draft-path": "{{ .chezmoi.homeDir }}/.vs-kubernetes/tools/draft/darwin-amd64/draft",
+        "vs-kubernetes.minikube-path.mac": "{{ .chezmoi.homeDir }}/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vscode-kubernetes.minikube-path.mac": "{{ .chezmoi.homeDir }}/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    },
+    "yaml.format.enable": false,
+    "customizeUI.activityBar": "bottom",
+    "customizeUI.titleBar": "inline",
+    "journal.base": "/Users/jens/Documents/Journal/",
+    "grammarly.autoActivate": false,
+    "terminal.explorerKind": "external",
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.highlights.enabled": true,
+    "workbench.preferredLightColorTheme": "Massimo",
+    "omnisharp.path": "latest",
+    "diffEditor.maxComputationTime": 0,
+    "python.showStartPage": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "python.languageServer": "Pylance",
+    "debug.console.fontSize": 18,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/*.js.map"
+    ],
+    "stories.username": "strange_Luminara Unduli",
+    "editor.suggest.showStatusBar": true,
+    "python.terminal.activateEnvironment": false,
+    "workbench.editor.decorations.badges": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "javascript.preferences.quoteStyle": "double",
+    "go.toolsManagement.autoUpdate": true,
+    "window.dialogStyle": "custom",
+    "redhat.telemetry.enabled": false,
+    "python.autoComplete.addBrackets": true,
+    "python.linting.banditEnabled": true,
+    "python.analysis.completeFunctionParens": true,
+    "editor.codeActionsOnSave": [],
+    "search.quickOpen.history.filterSortOrder": "recency",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.fontSize": 16,
+    "editor.inlineSuggest.enabled": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "vscode-kubernetes.kubectl-path": "/usr/local/bin/kubectl",
+    "go.buildOnSave": "off",
+    "go.testEnvVars": {
+        "TF_LOG": "trace",
+        "TF_ACC": "1",
+    },
+    "customizeUI.moveStatusbar": true,
+    "window.titleBarStyle": "native"
+}
