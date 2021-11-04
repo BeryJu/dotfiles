@@ -1,6 +1,6 @@
 
 {{- if (eq .chezmoi.os "darwin") }}
-format = """wks \
+format = """local \
   $username\
   $directory\
   $kubernetes\
@@ -10,7 +10,7 @@ format = """wks \
   $character\
   """
 {{- else }}
-format = """local \
+format = """wks \
   $username\
   $directory\
   $kubernetes\
