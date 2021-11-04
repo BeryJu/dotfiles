@@ -13,7 +13,7 @@ eval (starship init fish)
 
 # Aliases
 alias readlink=greadlink
-{{- if (eq .chezmoi.os "linux") -}}
+{{ if (eq .chezmoi.os "linux") -}}
 alias bat="batcat"
 {{- end }}
 alias cat="bat"
