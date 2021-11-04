@@ -13,7 +13,11 @@ eval (starship init fish)
 
 # Aliases
 alias readlink=greadlink
+{{- if (eq .chezmoi.os "darwin") -}}
 alias cat="bat"
+{{- else }}
+alias cat="batcat"
+{{- end }}
 # Docker
 alias dc="docker compose"
 alias dup="docker compose up -d"
