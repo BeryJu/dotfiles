@@ -2,7 +2,7 @@ set -gx KUBE_EDITOR nano
 set -gx VISUAL nano
 set -gx EDITOR nano
 set -g -x fish_greeting ''
-set --export FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=40% --preview-window=wrap --marker="*"'
+set --export FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=40% --preview-window=wrap --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 export LC_ALL=en_US.UTF-8
 
@@ -13,11 +13,10 @@ eval (starship init fish)
 
 # Aliases
 alias readlink=greadlink
-{{- if (eq .chezmoi.os "darwin") -}}
-alias cat="bat"
-{{- else }}
-alias cat="batcat"
+{{- if (eq .chezmoi.os "linux") -}}
+alias bat="batcat"
 {{- end }}
+alias cat="bat"
 # Docker
 alias dc="docker compose"
 alias dup="docker compose up -d"
