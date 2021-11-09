@@ -20,6 +20,12 @@ defaults write com.apple.finder _FXSortFoldersFirstOnDesktop -bool true
 defaults write com.apple.finder QuitMenuItem -bool true
 # Don't show warning for file extension changing
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
+# Open new finder windows in home folder
+defaults write com.apple.finder NewWindowTargetPath "file://{{ .chezmoi.homeDir }}"
+# Show items on desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Dock options
 # Don't re-order spaces
