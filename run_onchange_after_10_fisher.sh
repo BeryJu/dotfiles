@@ -7,3 +7,4 @@ fisher install decors/fish-colored-man
 fisher install jethrokuan/z
 fisher install oh-my-fish/plugin-bang-bang
 fisher install PatrickF1/fzf.fish
+fisher install ryoppippi/fish-poetry
