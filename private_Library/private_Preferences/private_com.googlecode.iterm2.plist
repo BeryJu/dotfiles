@@ -141,7 +141,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 3</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
+	<string>/Applications</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{800, 448}</string>
 	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
@@ -166,8 +166,10 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>2160 725 800 448 0 0 5120 1415 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>2250 762 620 398 0 0 5120 1415 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>178 722 810 563 0 0 5120 1415 </string>
+	<string>1707 0 1700 1415 0 0 5120 1415 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1707 838 810 577 0 0 5120 1415 </string>
 	<key>NeverWarnAboutShortLivedSessions_1A84637D-D91A-4585-988B-BAC08E5424F6</key>
@@ -375,7 +377,7 @@
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
@@ -758,7 +760,7 @@
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
-			<false/>
+			<integer>0</integer>
 			<key>Reduce Flicker</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1027,7 +1029,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.16868766622340425</real>
+			<real>0.2482098778257979</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1052,6 +1054,7 @@
 	<array>
 		<string>3.4.8</string>
 		<string>3.4.12</string>
+		<string>3.4.14</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -1073,7 +1076,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {5120, 1440}}</string>
 		<key>topLeft</key>
-		<string>{2098, 964}</string>
+		<string>{2098, 965}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -1082,11 +1085,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>9A84F06E-976A-4338-BB4E-219387E15271</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 12.0.1 (Build 21A559)</string>
+	<string>Version 12.1 (Build 21C52)</string>
 	<key>NoSyncLastSystemPythonVersionRequirement</key>
 	<string>1.17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>26</integer>
+	<integer>29</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>647634674.82820702</real>
 	<key>NoSyncPermissionToShowTip</key>
@@ -1947,8 +1950,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2021-11-08T20:01:01Z</date>
+	<date>2022-01-03T16:54:04Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>464675572</integer>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
@@ -1956,6 +1963,8 @@
 	<false/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
+	<key>SuppressRestartAnnouncement</key>
+	<true/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>URLHandlersByGuid</key>
@@ -1970,6 +1979,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.4.12</string>
+	<string>3.4.14</string>
 </dict>
 </plist>
