@@ -40,4 +40,10 @@ defaults write com.apple.dock orientation right
 defaults write com.apple.dock tilesize -int 16
 # Auto-hide instantly
 defaults write com.apple.dock autohide-time-modifier -float 0
+
+## Import settings
+
+defaults import com.manytricks.Moom private_Library/private_Preferences/private_com.manytricks.Moom.plist
+defaults import com.googlecode.iterm2 private_Library/private_Preferences/private_private_com.googlecode.iterm2
+
 {{- end }}
