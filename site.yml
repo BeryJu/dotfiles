@@ -1,0 +1,144 @@
+- hosts: localhost
+  tasks:
+  - name: Tap homebrew
+    community.general.homebrew_tap:
+      name: "{{ item }}"
+    loop:
+      - oven-sh/bun
+  - name: Install homebrew formulae
+    community.general.homebrew:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - awscli
+      - bat
+      - cloc
+      - cloudflared
+      - fish
+      - fisher
+      - fzf
+      - gh
+      - go
+      - helm
+      - htop
+      - kubernetes-cli
+      - node
+      - oven-sh/bun/bun
+      - python@3.13
+      - sqlite
+      - starship
+      - stern
+      - terraform
+      - uv
+  - name: Install homebrew casks
+    community.general.homebrew_cask:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - 1password-cli
+      - discord
+      - font-fira-code-nerd-font
+      - fork
+      - ghostty
+      - spotify
+      - yaak
+      - rectangle-pro
+  - name: Directories
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      mode: '0755'
+    loop:
+      - ~/dev
+      - ~/dev/t
+      - ~/dev/t/dev-stack
+  - name: Copy files
+    ansible.builtin.template:
+      src: "{{ item.from }}"
+      dest: "{{ item.to }}"
+      owner: jens
+      group: staff
+      mode: '0644'
+    loop:
+      - { from: "files/ghostty", to: "~/Library/Application Support/com.mitchellh.ghostty/config" }
+      - { from: "files/config.fish", to: "~/.config/fish/config.fish" }
+      - { from: "files/starship.toml", to: "~/.config/starship.toml" }
+      - { from: "files/git.config", to: "~/.gitconfig" }
+      - { from: "dev/t/dev-stack/compose.yaml", to: "~/dev/t/dev-stack/compose.yaml" }
+  - name: Start dev stack
+    community.docker.docker_compose_v2:
+      project_src: ~/dev/t/dev-stack
+  - name: Defaults | Global
+    community.general.osx_defaults:
+      key: "{{ item.key }}"
+      type: "{{ item.type }}"
+      value: "{{ item.value }}"
+    loop:
+      # Show all file extensions
+      - key: AppleShowAllExtensions
+        type: bool
+        value: true
+      # Sidebar icon size
+      - key: NSTableViewDefaultSizeMode
+        type: inta
+        value: 1
+  - name: Defaults | Finder
+    community.general.osx_defaults:
+      key: "{{ item.key }}"
+      domain: com.apple.finder
+      type: "{{ item.type }}"
+      value: "{{ item.value }}"
+    loop:
+      # Sort folders first
+      - key: _FXSortFoldersFirst
+        type: bool
+        value: true
+      # Sort folders first (on desktop)
+      - key: _FXSortFoldersFirstOnDesktop
+        type: bool
+        value: true
+      # Show quit menu for finder
+      - key: QuitMenuItem
+        type: bool
+        value: true
+      # Don't show warning for file extension changing
+      - key: FXEnableExtensionChangeWarning
+        type: bool
+        value: true
+  - name: Defaults | Dock
+    community.general.osx_defaults:
+      key: "{{ item.key }}"
+      domain: com.apple.dock
+      type: "{{ item.type }}"
+      value: "{{ item.value }}"
+    loop:
+      # Don't re-order spaces
+      - key: mru-spaces
+        type: bool
+        value: false
+      # Auto-hide dock
+      - key: autohide
+        type: bool
+        value: true
+      # Disable recents
+      - key: show-recents
+        type: bool
+        value: false
+      # Dock on the right
+      - key: orientation
+        type: string
+        value: right
+      # Smallest icon size
+      # - key: tilesize
+      #   type: int
+      #   value: 16
+      # Auto-hide instantly
+      - key: autohide-time-modifier
+        type: float
+        value: 0
+  - name: Defaults | Keyboard navigation
+    osx_defautls:
+      domain: NSGlobalDomain
+      key: AppleKeyboardUIMode
+      value: 2
+      type: int

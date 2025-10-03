@@ -1,9 +1,0 @@
-Host *.beryju.org *.jela.io
-	ForwardAgent yes
-	User jens
-
-Host home
-	StrictHostKeyChecking no
-	ForwardAgent yes
-	User jens
-	HostName wks.jela.io

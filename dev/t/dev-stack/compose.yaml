@@ -1,0 +1,97 @@
+services:
+  # Testing
+  # nginx:
+  #   image: nginx
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+  # keycloak:
+  #   container_name: devstack-keycloak
+  #   image: quay.io/keycloak/keycloak:latest
+  #   command: start-dev --hostname http://localhost:9321
+  #   ports:
+  #     - 9321:8080
+  #   volumes:
+  #     - keycloak-data:/opt/keycloak/data/
+  #   environment:
+  #     KEYCLOAK_ADMIN: akadmin
+  #     KEYCLOAK_ADMIN_PASSWORD: foo
+
+  # Always running services
+  postgresql:
+    container_name: devstack-postgres
+    image: proxy.registry.beryju.io/library/postgres:15
+    command:
+      - postgres
+      - -c
+      - log_statement=all
+      - -c
+      - log_destination=stderr
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: always
+  # postgres_exporter:
+  #   container_name: postgres_exporter
+  #   image: quay.io/prometheuscommunity/postgres-exporter
+  #   environment:
+  #     DATA_SOURCE_NAME: "postgresql://postgres@postgres:5432/postgres?sslmode=disable"
+  # prometheus:
+  #   container_name: prometheus
+  #   image: quay.io/prometheus/prometheus
+  #   command:
+  #     - --web.enable-lifecycle
+  #     - --config.file=/etc/prometheus/prometheus.yml
+  #   volumes:
+  #     - ./prometheus.yaml:/etc/prometheus/prometheus.yml
+  #   ports:
+  #     - 127.0.0.1:9090:9090
+  redis:
+    container_name: devstack-redis
+    image: proxy.registry.beryju.io/library/redis
+    command: --save 60 1 --loglevel warning
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    restart: always
+  # redis_exporter:
+  #   container_name: redis_exporter
+  #   image: bitnami/redis-exporter:latest
+  #   environment:
+  #     REDIS_ADDR: redis
+  mailpit:
+    container_name: devstack-mailpit
+    image: proxy.registry.beryju.io/axllent/mailpit
+    restart: always
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+  whoami:
+    container_name: devstack-whoami
+    image: proxy.registry.beryju.io/traefik/whoami
+    restart: always
+    command: --verbose
+    # command:
+    #   --cert /certs/server.crt --key /certs/server.key
+    ports:
+      - 3001:80
+    # volumes:
+    #   - ./t/whoami:/certs
+  spotlight:
+    container_name: devstack-spotlight
+    image: ghcr.io/getsentry/spotlight
+    ports:
+      - 8969:8969
+    restart: always
+
+volumes:
+  db-data:
+    driver: local
+  redis-data:
+    driver: local

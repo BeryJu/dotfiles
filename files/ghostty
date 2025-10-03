@@ -1,0 +1,14 @@
+font-family = "FiraCode Nerd Font Mono"
+font-size = 16
+theme = niji
+background-opacity = 0.75
+background-blur-radius = 45
+working-directory = "/Users/jens/dev"
+macos-titlebar-style = tabs
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+quit-after-last-window-closed = true
+shell-integration = "detect"
+cursor-style = block
+shell-integration-features = no-cursor
+link-url = true

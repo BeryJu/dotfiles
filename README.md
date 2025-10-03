@@ -1,0 +1,2 @@
+- Map CapsLock to escape
+- Allow keyboard navigation for dialogs
